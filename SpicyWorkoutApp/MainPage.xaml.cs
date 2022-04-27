@@ -9,12 +9,16 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	private async void Button_Clicked(object sender, EventArgs e)
 	{
-		count++;
-		CounterLabel.Text = $"Current count: {count}";
-
-		SemanticScreenReader.Announce(CounterLabel.Text);
+		try
+		{
+			await Sheet.OpenSheet();
+		}
+		catch (Exception ex)
+		{
+			//ex.Log();
+		}
 	}
 }
 
