@@ -7,8 +7,5 @@ namespace SpicyWorkoutPlaner.Planer.Models
     {
         [Indexed]
         public long WorkoutExerciseId { get; set; }
-
-        // TODO List darf ich nicht machen
-        public List<string> Notes { get; set; }
     }
 }
