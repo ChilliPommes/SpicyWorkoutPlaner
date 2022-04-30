@@ -6,7 +6,7 @@
     xmlns:baseControls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls.BaseControls;assembly=SpicyWorkoutPlaner.Planer"
     xmlns:controls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls;assembly=SpicyWorkoutPlaner.Planer">
 
-    <Grid>
+    <Grid BackgroundColor="White">
         <Grid HorizontalOptions="Center">
             <Button
                 BackgroundColor="Red"

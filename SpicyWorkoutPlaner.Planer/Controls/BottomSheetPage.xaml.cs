@@ -74,7 +74,13 @@ public partial class BottomSheetPage : ContentPage
         }
     }
 
-	private async Task ShowContent()
+    protected override void OnSizeAllocated(double width, double height)
+    {
+        base.OnSizeAllocated(width, height);
+		ShowContent().ConfigureAwait(true);
+    }
+
+    private async Task ShowContent()
     {
 		animationIsRunning = true;
 		await Task.WhenAll(

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SpicyWorkoutPlaner.Planer.Views.CreateWorkoutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:baseControls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls.BaseControls"
+    x:Name="CreatorPage"
+    BackgroundColor="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <ListView
+            Grid.Row="1"
+            BackgroundColor="LightCyan"
+            VerticalOptions="FillAndExpand" />
+
+        <baseControls:Card
+            Grid.Row="0"
+            BackgroundColor="White"
+            CornerRadius="20,20,0,0">
+            <baseControls:Card.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.8"
+                    Radius="30"
+                    Offset="0" />
+            </baseControls:Card.Shadow>
+            <baseControls:Card.Content>
+                <StackLayout HeightRequest="100">
+                    <Label
+                        FontSize="Small"
+                        HorizontalOptions="Center"
+                        Text="Hello i am a label"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </baseControls:Card.Content>
+        </baseControls:Card>
+
+        <baseControls:Card
+            Grid.Row="2"
+            BackgroundColor="White"
+            CornerRadius="20,20,0,0">
+            <baseControls:Card.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.8"
+                    Radius="30"
+                    Offset="0" />
+            </baseControls:Card.Shadow>
+            <baseControls:Card.Content>
+                <StackLayout HeightRequest="80">
+                    <Button
+                        BackgroundColor="Black"
+                        CornerRadius="15"
+                        Text="Hello i am a button"
+                        VerticalOptions="Center"
+                        WidthRequest="200" />
+                </StackLayout>
+            </baseControls:Card.Content>
+        </baseControls:Card>
+    </Grid>
+</ContentPage>

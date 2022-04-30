@@ -1,4 +1,6 @@
-﻿namespace SpicyWorkoutApp;
+﻿using SpicyWorkoutPlaner.Planer.Controls;
+
+namespace SpicyWorkoutApp;
 
 public partial class MainPage : ContentPage
 {
@@ -9,14 +11,9 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
-
-    }
-
-    private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-    {
-
+		await Application.Current.MainPage.Navigation.PushModalAsync(new BottomSheetPage(), false).ConfigureAwait(true);
     }
 }
 
