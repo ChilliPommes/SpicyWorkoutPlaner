@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SpicyWorkoutPlaner.Planer.Controls.BottomSheetPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:baseControls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls.BaseControls"
+    xmlns:viewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels"
+    x:Name="BottomSheetRef"
+    x:DataType="viewModels:IBottomSheetViewModel"
+    BackgroundColor="Transparent">
+    <Grid>
+        <BoxView
+            x:Name="Backdrop"
+            Background="Black"
+            Opacity="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <baseControls:Card
+            x:Name="BottomSheetCard"
+            BackgroundColor="{Binding BackGroundColor}"
+            Content="{Binding SheetContent, Source={x:Reference BottomSheetRef}}"
+            CornerRadius="20,20,0,0"
+            HeightRequest="300"
+            Opacity="100"
+            TranslationY="{Binding Height, Source={x:Reference BottomSheetCard}}"
+            VerticalOptions="End">
+            <baseControls:Card.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Down" Swiped="SwipeGestureRecognizer_OnSwiped" />
+            </baseControls:Card.GestureRecognizers>
+        </baseControls:Card>
+    </Grid>
+</ContentPage>

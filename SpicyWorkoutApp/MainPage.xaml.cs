@@ -9,16 +9,14 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private async void Button_Clicked(object sender, EventArgs e)
-	{
-		try
-		{
-			await Sheet.OpenSheet();
-		}
-		catch (Exception ex)
-		{
-			//ex.Log();
-		}
-	}
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+    {
+
+    }
 }
 
