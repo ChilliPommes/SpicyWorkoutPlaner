@@ -4,7 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:baseControls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls.BaseControls"
+    xmlns:viewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels"
     x:Name="CreatorPage"
+    x:DataType="viewModels:CreateWorkoutPageViewModel"
     BackgroundColor="LightGray">
     <Shell.BackgroundColor>
         <Color>White</Color>
@@ -41,7 +43,11 @@
                 HorizontalOptions="End"
                 Source="icon_add.png"
                 VerticalOptions="Center"
-                WidthRequest="30" />
+                WidthRequest="30">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
     </Shell.TitleView>
     <Grid>
@@ -52,10 +58,7 @@
 
         <ListView Grid.Row="1" VerticalOptions="FillAndExpand" />
 
-        <baseControls:Card
-            Grid.Row="0"
-            BackgroundColor="White"
-            CornerRadius="20,20,0,0">
+        <baseControls:Card Grid.Row="0" BackgroundColor="White">
             <baseControls:Card.Shadow>
                 <Shadow
                     Brush="Black"

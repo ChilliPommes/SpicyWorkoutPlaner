@@ -46,6 +46,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\icon_add.svg" />
+	  <None Remove="Resources\Images\icon_back.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\SpicyWorkoutPlaner.Planer\SpicyWorkoutPlaner.Planer.csproj" />
 	</ItemGroup>
 

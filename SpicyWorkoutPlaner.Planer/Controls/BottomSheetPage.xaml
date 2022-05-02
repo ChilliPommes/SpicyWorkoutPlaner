@@ -22,8 +22,8 @@
             x:Name="BottomSheetCard"
             BackgroundColor="{Binding BackGroundColor}"
             Content="{Binding SheetContent, Source={x:Reference BottomSheetRef}}"
-            CornerRadius="20,20,0,0"
             HeightRequest="300"
+            HorizontalOptions="FillAndExpand"
             Opacity="100"
             TranslationY="{Binding Height, Source={x:Reference BottomSheetCard}}"
             VerticalOptions="End">
