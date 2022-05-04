@@ -9,14 +9,50 @@
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="60,60,0,0" />
         </Border.StrokeShape>
-        <StackLayout BackgroundColor="White" HeightRequest="450">
-            <StackLayout.Shadow>
+        <Grid
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.Shadow>
                 <Shadow
                     Brush="Black"
                     Opacity="0.8"
                     Radius="40"
                     Offset="0" />
-            </StackLayout.Shadow>
-        </StackLayout>
+            </Grid.Shadow>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Entry
+                Grid.Row="0"
+                BackgroundColor="#BFBFBF"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                MaxLength="50"
+                TextColor="Black"
+                VerticalOptions="Start"
+                WidthRequest="100" />
+
+            <Label
+                Grid.Row="2"
+                BackgroundColor="Red"
+                Text="Hallo ich bin ein Label"
+                TextColor="Black" />
+
+            <Editor
+                Grid.Row="3"
+                BackgroundColor="#BFBFBF"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                MaxLength="400"
+                TextColor="Black"
+                VerticalOptions="Center"
+                WidthRequest="100" />
+        </Grid>
     </Border>
 </ContentView>
