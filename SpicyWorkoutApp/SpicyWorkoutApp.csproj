@@ -48,6 +48,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\icon_add.svg" />
 	  <None Remove="Resources\Images\icon_back.svg" />
+	  <None Remove="Resources\Images\icon_close.svg" />
+	  <None Remove="Resources\Images\icon_done.svg" />
+	  <None Remove="Resources\Images\icon_help.svg" />
 	</ItemGroup>
 
 	<ItemGroup>

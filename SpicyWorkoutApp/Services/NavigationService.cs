@@ -27,5 +27,17 @@ namespace SpicyWorkoutApp.Services
                 }
             }
         }
+
+        public async Task NavigateBack(bool isPopup = false)
+        {
+            if (isPopup)
+            {
+                await navigation.PopModalAsync(false).ConfigureAwait(true);
+            }
+            else
+            {
+                await navigation.PopAsync().ConfigureAwait(true);
+            }
+        }
     }
 }

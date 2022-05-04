@@ -23,36 +23,98 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="10" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Entry
-                Grid.Row="0"
-                BackgroundColor="#BFBFBF"
-                HeightRequest="30"
-                HorizontalOptions="Center"
-                MaxLength="50"
-                TextColor="Black"
-                VerticalOptions="Start"
-                WidthRequest="100" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
 
-            <Label
-                Grid.Row="2"
-                BackgroundColor="Red"
-                Text="Hallo ich bin ein Label"
-                TextColor="Black" />
+                <Image
+                    Grid.Column="0"
+                    Margin="10,5,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="icon_close.png"
+                    VerticalOptions="Start"
+                    WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Close}" />
+                    </Image.GestureRecognizers>
+                </Image>
 
-            <Editor
+                <Image
+                    Grid.Column="2"
+                    Margin="0,5,10,0"
+                    HeightRequest="30"
+                    HorizontalOptions="End"
+                    Source="icon_done.png"
+                    VerticalOptions="Start"
+                    WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Save}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <StackLayout
+                Grid.Row="1"
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    Margin="25,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding LabelName}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Entry
+                    Margin="20,0,20,0"
+                    FontSize="Medium"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    MaxLength="30"
+                    Placeholder="..."
+                    PlaceholderColor="DarkGray"
+                    Text="{Binding Name}"
+                    TextColor="Black"
+                    VerticalOptions="Start" />
+            </StackLayout>
+
+            <StackLayout
                 Grid.Row="3"
-                BackgroundColor="#BFBFBF"
-                HeightRequest="30"
-                HorizontalOptions="Center"
-                MaxLength="400"
-                TextColor="Black"
-                VerticalOptions="Center"
-                WidthRequest="100" />
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    Margin="25,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding LabelDescription}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Editor
+                    Grid.Row="3"
+                    Margin="20,0,20,0"
+                    AutoSize="TextChanges"
+                    HorizontalOptions="FillAndExpand"
+                    MaxLength="200"
+                    MinimumHeightRequest="50"
+                    Text="{Binding Description}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
         </Grid>
     </Border>
 </ContentView>

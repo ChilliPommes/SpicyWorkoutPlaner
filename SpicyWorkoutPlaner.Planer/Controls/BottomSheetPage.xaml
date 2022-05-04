@@ -22,7 +22,7 @@
             x:Name="BottomSheetCard"
             BackgroundColor="{Binding BackGroundColor}"
             Content="{Binding SheetContent, Source={x:Reference BottomSheetRef}}"
-            HeightRequest="300"
+            HeightRequest="400"
             HorizontalOptions="FillAndExpand"
             Opacity="100"
             TranslationY="{Binding Height, Source={x:Reference BottomSheetCard}}"

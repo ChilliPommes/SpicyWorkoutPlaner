@@ -1,4 +1,6 @@
-﻿using SpicyWorkoutApp.Modules;
+﻿using Android.Content.Res;
+using Microsoft.Maui.Platform;
+using SpicyWorkoutApp.Modules;
 using SpicyWorkoutApp.Services;
 using SpicyWorkoutPlaner.Core.Interfaces;
 using SpicyWorkoutPlaner.Core.Services;
@@ -37,6 +39,23 @@ public static class MauiProgram
 
 		DatabaseModule.InitializeDatabase();
 
+		SetHandler();
+
 		return builder.Build();
+	}
+
+	public static void SetHandler()
+    {
+#if ANDROID
+		Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("EntryUnderline", (h, v) =>
+		{
+			h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
+		});
+
+		Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("EditorUnderline", (h, v) =>
+		{
+			h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
+		});
+#endif
 	}
 }
