@@ -10,6 +10,8 @@ namespace SpicyWorkoutPlaner.Core.Services
 
         T? FindById<T>(Expression<Func<T, bool>> filter) where T : new();
 
+        List<T> FindAll<T>(Expression<Func<T, bool>> filter) where T : new();
+
         void SoftDelete<T>(T entity);
     }
 }

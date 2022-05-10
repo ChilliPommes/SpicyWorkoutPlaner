@@ -35,6 +35,16 @@ namespace SpicyWorkoutPlaner.Core.Services
             return database.Table<T>().Where(filter).FirstOrDefault();
         }
 
+        public List<T> FindAll<T>(Expression<Func<T, bool>> filter)where T : new()
+        {
+            var database = DataBaseConnection.Instance.Connection;
+
+            if (database == null)
+                throw new NullReferenceException("database can't be null");
+
+            return database.Table<T>().Where(filter).ToList();
+        }
+
         public void SoftDelete<T>(T entity)
         {
             var database = DataBaseConnection.Instance.Connection;

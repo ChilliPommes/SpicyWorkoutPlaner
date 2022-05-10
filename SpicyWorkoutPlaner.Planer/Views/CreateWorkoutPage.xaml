@@ -4,10 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:baseControls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls.BaseControls"
+    xmlns:itemViewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels.ListItems"
     xmlns:viewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels"
     x:Name="CreatorPage"
     x:DataType="viewModels:CreateWorkoutPageViewModel"
-    BackgroundColor="LightGray">
+    BackgroundColor="White">
     <Shell.BackgroundColor>
         <Color>White</Color>
     </Shell.BackgroundColor>
@@ -56,7 +57,20 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="1" VerticalOptions="FillAndExpand" />
+        <ListView
+            Grid.Row="1"
+            ItemsSource="{Binding Items}"
+            VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="itemViewModels:WorkoutListItemViewModel">
+                    <ContentView>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </ContentView>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
         <baseControls:Card Grid.Row="0" BackgroundColor="White">
             <baseControls:Card.Shadow>
