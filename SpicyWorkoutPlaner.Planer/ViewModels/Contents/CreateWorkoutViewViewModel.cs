@@ -14,6 +14,8 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
         private string? name;
         private string? description;
 
+        public event EventHandler ItemCreated;
+
         public CreateWorkoutViewViewModel(
             INavigationService navigationService,
             IRepository repository)
@@ -54,6 +56,8 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
 
             repository.Insert(workout);
 
+            NotifyItemCreated();
+
             // TODO use close of component
             await navigationService.NavigateBack(true);
         });
@@ -76,6 +80,11 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
                 description = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        private void NotifyItemCreated()
+        {
+            ItemCreated?.Invoke(this, new EventArgs());
         }
     }
 }

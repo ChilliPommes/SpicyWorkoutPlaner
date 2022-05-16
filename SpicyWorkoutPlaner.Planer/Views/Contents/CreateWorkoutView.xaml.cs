@@ -10,4 +10,9 @@ public partial class CreateWorkoutView : ContentView
 
 		BindingContext = createWorkoutViewViewModel;
 	}
+
+	public void RegisterItemCreateEvent(EventHandler handler)
+    {
+		(BindingContext as CreateWorkoutViewViewModel).ItemCreated += handler;
+	}
 }

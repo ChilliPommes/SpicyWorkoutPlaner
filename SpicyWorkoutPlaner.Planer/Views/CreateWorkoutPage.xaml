@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:baseControls="clr-namespace:SpicyWorkoutPlaner.Planer.Controls.BaseControls"
-    xmlns:itemViewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels.ListItems"
+    xmlns:contentViews="clr-namespace:SpicyWorkoutPlaner.Planer.Views.Contents"
     xmlns:viewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels"
     x:Name="CreatorPage"
     x:DataType="viewModels:CreateWorkoutPageViewModel"
@@ -33,7 +33,7 @@
                 Grid.Column="1"
                 FontSize="Medium"
                 HorizontalOptions="Center"
-                Text="Logo"
+                Text="Meine Workouts"
                 TextColor="Black"
                 VerticalOptions="Center" />
 
@@ -53,24 +53,22 @@
     </Shell.TitleView>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ListView
+        <CollectionView
             Grid.Row="1"
+            ItemSizingStrategy="MeasureAllItems"
+            ItemsLayout="VerticalList"
             ItemsSource="{Binding Items}"
             VerticalOptions="FillAndExpand">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="itemViewModels:WorkoutListItemViewModel">
-                    <ContentView>
-                        <StackLayout>
-                            <Label Text="{Binding Name}" />
-                        </StackLayout>
-                    </ContentView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <contentViews:WorkoutListItemView />
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <baseControls:Card Grid.Row="0" BackgroundColor="White">
             <baseControls:Card.Shadow>
@@ -80,33 +78,6 @@
                     Radius="30"
                     Offset="0" />
             </baseControls:Card.Shadow>
-            <baseControls:Card.Content>
-                <StackLayout HeightRequest="70" VerticalOptions="CenterAndExpand">
-                    <Border
-                        Margin="0,10,0,0"
-                        BackgroundColor="#55D3D3D3"
-                        HeightRequest="30"
-                        StrokeThickness="0"
-                        VerticalOptions="Center"
-                        WidthRequest="200">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="40,40,40,40" />
-                        </Border.StrokeShape>
-                        <Border.Shadow>
-                            <Shadow
-                                Brush="Black"
-                                Opacity="0.8"
-                                Radius="30" />
-                        </Border.Shadow>
-                        <Label
-                            HorizontalOptions="Center"
-                            Text="Meine Workouts"
-                            TextColor="Black"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center" />
-                    </Border>
-                </StackLayout>
-            </baseControls:Card.Content>
         </baseControls:Card>
     </Grid>
 </ContentPage>

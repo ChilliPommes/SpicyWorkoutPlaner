@@ -14,6 +14,9 @@
     <MauiXaml Update="Views\Contents\CreateWorkoutView.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\Contents\WorkoutListItemView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\CreateWorkoutPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

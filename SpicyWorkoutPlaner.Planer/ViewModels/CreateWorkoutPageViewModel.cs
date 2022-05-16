@@ -45,6 +45,8 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
 
             if (view is not null)
             {
+                view.RegisterItemCreateEvent((o, e) => { LoadWorkOuts(); });
+
                 await navigationService.NavigateTo(new BottomSheetPage()
                 {
                     SheetContent = view
@@ -65,7 +67,7 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
 
             var workouts = repository.FindAll<Workout>(x => x.DeletedAt == null);
 
-            foreach(var workout in workouts)
+            foreach (var workout in workouts)
             {
                 var exercises = repository.FindAll<WorkoutExercise>(x => x.WorkoutId == workout.Id);
 
