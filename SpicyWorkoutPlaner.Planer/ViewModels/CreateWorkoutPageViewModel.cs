@@ -29,6 +29,8 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
             LoadWorkOuts();
         }
 
+        public WorkoutListItemViewModel SelectedItem { get; set; }
+
         public ObservableCollection<WorkoutListItemViewModel> Items
         {
             get => items;
@@ -52,6 +54,11 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
                     SheetContent = view
                 }, true);
             }
+        });
+
+        public ICommand ItemSelectionChanged => new Command(() =>
+        {
+            // TODO fill with life
         });
 
         private void LoadWorkOuts()
