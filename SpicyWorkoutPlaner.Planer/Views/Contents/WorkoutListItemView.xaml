@@ -8,7 +8,7 @@
     x:DataType="itemViewModels:WorkoutListItemViewModel">
     <Border BackgroundColor="White" StrokeThickness="0">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="40,40,40,40" />
+            <RoundRectangle CornerRadius="10,10,10,10" />
         </Border.StrokeShape>
         <Border.Shadow>
             <Shadow
