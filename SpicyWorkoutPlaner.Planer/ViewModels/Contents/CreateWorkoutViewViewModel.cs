@@ -1,8 +1,8 @@
 ﻿using SpicyWorkoutPlaner.Core.Interfaces;
 using SpicyWorkoutPlaner.Core.Resx;
-using SpicyWorkoutPlaner.Core.Services;
 using SpicyWorkoutPlaner.Core.ViewModels;
 using SpicyWorkoutPlaner.Planer.Models;
+using SpicyWorkoutPlaner.Planer.Repositories;
 using System.Windows.Input;
 
 namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
@@ -10,7 +10,7 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
     public class CreateWorkoutViewViewModel : BaseViewModel
     {
         private readonly INavigationService navigationService;
-        private readonly IRepository repository;
+        private readonly WorkoutRepository workoutRepository;
         private string? name;
         private string? description;
 
@@ -18,10 +18,10 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
 
         public CreateWorkoutViewViewModel(
             INavigationService navigationService,
-            IRepository repository)
+            WorkoutRepository workoutRepository)
         {
             this.navigationService = navigationService;
-            this.repository = repository;
+            this.workoutRepository = workoutRepository;
         }
 
         public string LabelName => AppResources.LabelName;
@@ -51,10 +51,11 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
             Workout workout = new Workout()
             {
                 Name = this.Name,
-                Description = Description ?? ""
+                Description = Description ?? "",
+                CreatedAt = DateTime.Now,
             };
 
-            repository.Insert(workout);
+            workoutRepository.Insert(workout);
 
             NotifyItemCreated();
 

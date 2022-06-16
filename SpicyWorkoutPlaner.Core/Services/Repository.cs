@@ -1,62 +1,62 @@
-﻿using SpicyWorkoutPlaner.Core.Models;
-using System.Linq.Expressions;
+﻿using Realms;
+using SpicyWorkoutPlaner.Core.Models;
+using System.Text;
 
 namespace SpicyWorkoutPlaner.Core.Services
 {
-    public class Repository : IRepository
+    public class Repository
     {
-        public void Insert<T>(T entity)
+        protected RealmConfiguration configuration;
+
+        public Repository()
         {
-            var database = DataBaseConnection.Instance.Connection;
-
-            if (database == null)
-                throw new NullReferenceException("database can't be null");
-
-            database.Insert(entity);
-        }
-
-        public void Update<T>(T entity)
-        {
-            var database = DataBaseConnection.Instance.Connection;
-
-            if (database == null)
-                throw new NullReferenceException("database can't be null");
-
-            database.Update(entity);
-        }
-
-        public T? FindById<T>(Expression<Func<T, bool>> filter)where T : new()
-        {
-            var database = DataBaseConnection.Instance.Connection;
-
-            if (database == null)
-                throw new NullReferenceException("database can't be null");
-
-            return database.Table<T>().Where(filter).FirstOrDefault();
-        }
-
-        public List<T> FindAll<T>(Expression<Func<T, bool>> filter)where T : new()
-        {
-            var database = DataBaseConnection.Instance.Connection;
-
-            if (database == null)
-                throw new NullReferenceException("database can't be null");
-
-            return database.Table<T>().Where(filter).ToList();
-        }
-
-        public void SoftDelete<T>(T entity)
-        {
-            var database = DataBaseConnection.Instance.Connection;
-
-            if (database == null)
-                throw new NullReferenceException("database can't be null");
-
-            if (entity is DataBaseCore dbCore)
+            configuration = new RealmConfiguration(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "spicydata"))
             {
-                dbCore.DeletedAt = DateTime.Now;
+                EncryptionKey = Encoding.UTF8.GetBytes("5OZy0mX7BM00IoNhrChw3MZY5jPUWoJpjGDIq3gu5szYlahfkiH2gOZFf6cl5tZl")
+            }; 
+        }
 
-                database.Update(entity);
+        public void Insert(RealmObject entity)
+        {
+            var realm = Realm.GetInstance(configuration);
+
+            if (realm == null)
+                throw new NullReferenceException("database can't be null");
+
+            realm.Write(() =>
+            {
+                realm.Add(entity, false);
+            });
+        }
+
+        public void Update(RealmObject entity)
+        {
+            var realm = Realm.GetInstance(configuration);
+
+            if (realm == null)
+                throw new NullReferenceException("database can't be null");
+
+            realm.Write(() =>
+            {
+                realm.Add(entity, true);
+            });
+        }
+
+        public void SoftDelete(RealmObject entity)
+        {
+            var realm = Realm.GetInstance(configuration);
+
+            if (realm == null)
+                throw new NullReferenceException("database can't be null");
+
+            if (entity is IDataBaseCore)
+            {
+                (entity as IDataBaseCore)!.DeletedAt = DateTime.Now;
+
+                realm.Write(() =>
+                {
+                    realm.Add(entity, true);
+                });
             }
         }
     }

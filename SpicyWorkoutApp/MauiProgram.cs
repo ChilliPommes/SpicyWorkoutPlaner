@@ -1,10 +1,9 @@
 ﻿using Android.Content.Res;
 using Microsoft.Maui.Platform;
-using SpicyWorkoutApp.Modules;
 using SpicyWorkoutApp.Services;
 using SpicyWorkoutPlaner.Core.Interfaces;
-using SpicyWorkoutPlaner.Core.Services;
 using SpicyWorkoutPlaner.Planer;
+using SpicyWorkoutPlaner.Planer.Repositories;
 using SpicyWorkoutPlaner.Planer.ViewModels;
 using SpicyWorkoutPlaner.Planer.ViewModels.Contents;
 using SpicyWorkoutPlaner.Planer.Views;
@@ -22,11 +21,12 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+			}); 
 
-		// Add Services to Services
-		builder.Services.AddTransient<IRepository, Repository>();
-		builder.Services.AddSingleton<INavigationService, NavigationService>();
+        // Add Services to Services
+        builder.Services.AddTransient<WorkoutRepository>();
+        builder.Services.AddTransient<WorkoutExerciseRepository>();
+        builder.Services.AddSingleton<INavigationService, NavigationService>();
 
 		// Add Views to Services
 		builder.Services.AddTransient<CreateWorkoutPage>();
@@ -35,9 +35,6 @@ public static class MauiProgram
 		// Add ViewModels to Services
 		builder.Services.AddTransient<CreateWorkoutPageViewModel>();
 		builder.Services.AddTransient<CreateWorkoutViewViewModel>();
-
-
-		DatabaseModule.InitializeDatabase();
 
 		SetHandler();
 

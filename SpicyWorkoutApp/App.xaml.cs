@@ -1,4 +1,6 @@
-﻿namespace SpicyWorkoutApp;
+﻿using Microsoft.Maui.Handlers;
+
+namespace SpicyWorkoutApp;
 
 public partial class App : Application
 {
@@ -7,5 +9,12 @@ public partial class App : Application
 		InitializeComponent();
 
 		MainPage = new AppShell();
-	}
+
+        WindowHandler.Mapper.ModifyMapping(nameof(IWindow.Content), OnWorkaround);
+    }
+
+    private void OnWorkaround(IWindowHandler arg1, IWindow arg2, Action<IElementHandler, IElement> arg3)
+    {
+        WindowHandler.MapContent(arg1, arg2);
+    }
 }

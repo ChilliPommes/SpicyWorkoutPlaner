@@ -1,8 +1,7 @@
 ﻿using SpicyWorkoutPlaner.Core.Interfaces;
-using SpicyWorkoutPlaner.Core.Services;
 using SpicyWorkoutPlaner.Core.ViewModels;
 using SpicyWorkoutPlaner.Planer.Controls;
-using SpicyWorkoutPlaner.Planer.Models;
+using SpicyWorkoutPlaner.Planer.Repositories;
 using SpicyWorkoutPlaner.Planer.ViewModels.ListItems;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -13,18 +12,20 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
     {
         private readonly INavigationService navigationService;
         private readonly IServiceProvider serviceProvider;
-        private readonly IRepository repository;
-
+        private readonly WorkoutRepository workoutRepository;
+        private readonly WorkoutExerciseRepository workoutExerciseRepository;
         private ObservableCollection<WorkoutListItemViewModel> items;
 
         public CreateWorkoutPageViewModel(
             INavigationService navigationService,
             IServiceProvider serviceProvider,
-            IRepository repository)
+            WorkoutRepository workoutRepository,
+            WorkoutExerciseRepository workoutExerciseRepository)
         {
             this.navigationService = navigationService;
             this.serviceProvider = serviceProvider;
-            this.repository = repository;
+            this.workoutRepository = workoutRepository;
+            this.workoutExerciseRepository = workoutExerciseRepository;
 
             LoadWorkOuts();
         }
@@ -72,11 +73,11 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
                 Items.Clear();
             }
 
-            var workouts = repository.FindAll<Workout>(x => x.DeletedAt == null);
+            var workouts = workoutRepository.GetAll();
 
             foreach (var workout in workouts)
             {
-                var exercises = repository.FindAll<WorkoutExercise>(x => x.WorkoutId == workout.Id);
+                var exercises = workoutExerciseRepository.GetAllByWorkoutId(workout.Id);
 
                 var itemViewModel = new WorkoutListItemViewModel(workout, exercises);
 
