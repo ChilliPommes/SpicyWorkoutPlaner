@@ -6,12 +6,12 @@ namespace SpicyWorkoutPlaner.Planer.Models
     public sealed class WorkoutSet : RealmObject, IDataBaseCore
     {
         [Indexed]
-        public long WorkoutExerciseId { get; set; }
+        public string WorkoutExerciseId { get; set; }
 
         // Interface impl.
 
         [PrimaryKey]
-        public long Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [Required]
         public DateTimeOffset? CreatedAt { get; set; }

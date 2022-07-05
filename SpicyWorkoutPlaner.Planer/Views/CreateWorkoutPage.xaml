@@ -7,34 +7,20 @@
     xmlns:contentViews="clr-namespace:SpicyWorkoutPlaner.Planer.Views.Contents"
     xmlns:viewModels="clr-namespace:SpicyWorkoutPlaner.Planer.ViewModels"
     x:Name="CreatorPage"
-    x:DataType="viewModels:CreateWorkoutPageViewModel"
-    BackgroundColor="White">
-    <Shell.BackgroundColor>
-        <Color>White</Color>
-    </Shell.BackgroundColor>
+    x:DataType="viewModels:CreateWorkoutPageViewModel">
     <Shell.TitleView>
-        <Grid BackgroundColor="White">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="40" />
             </Grid.ColumnDefinitions>
 
-            <!--<Image
-                Grid.Column="0"
-                Margin="0,0,0,0"
-                HeightRequest="30"
-                HorizontalOptions="Start"
-                Source="icon_back.png"
-                VerticalOptions="Center"
-                WidthRequest="22" />-->
-
             <Label
                 Grid.Column="1"
                 FontSize="Medium"
-                HorizontalOptions="Center"
+                HorizontalOptions="Start"
                 Text="Meine Workouts"
-                TextColor="Black"
                 VerticalOptions="Center" />
 
             <Image
@@ -42,7 +28,8 @@
                 Margin="0,0,15,0"
                 HeightRequest="30"
                 HorizontalOptions="End"
-                Source="icon_add.png"
+                Source="{AppThemeBinding Light=light_icon_add.png,
+                                         Dark=dark_icon_add.png}"
                 VerticalOptions="Center"
                 WidthRequest="30">
                 <Image.GestureRecognizers>
@@ -73,13 +60,9 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <baseControls:Card Grid.Row="0" BackgroundColor="White">
+        <baseControls:Card Grid.Row="0">
             <baseControls:Card.Shadow>
-                <Shadow
-                    Brush="Black"
-                    Opacity="0.8"
-                    Radius="30"
-                    Offset="0" />
+                <Shadow />
             </baseControls:Card.Shadow>
         </baseControls:Card>
     </Grid>

@@ -36,7 +36,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -46,11 +45,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\icon_add.svg" />
-	  <None Remove="Resources\Images\icon_back.svg" />
-	  <None Remove="Resources\Images\icon_close.svg" />
-	  <None Remove="Resources\Images\icon_done.svg" />
-	  <None Remove="Resources\Images\icon_help.svg" />
+	  <None Remove="Resources\Images\Dark\dark_icon_add.svg" />
+	  <None Remove="Resources\Images\Dark\dark_icon_close.svg" />
+	  <None Remove="Resources\Images\Dark\dark_icon_done.svg" />
+	  <None Remove="Resources\Images\Light\light_icon_add.svg" />
+	  <None Remove="Resources\Images\Light\light_icon_back.svg" />
+	  <None Remove="Resources\Images\Light\light_icon_close.svg" />
+	  <None Remove="Resources\Images\Light\light_icon_done.svg" />
+	  <None Remove="Resources\Images\Light\light_icon_help.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -59,6 +61,17 @@
 
 	<ItemGroup>
 	  <Folder Include="Modules\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Dark\dark_icon_add.svg" />
+	  <MauiImage Include="Resources\Images\Dark\dark_icon_close.svg" />
+	  <MauiImage Include="Resources\Images\Dark\dark_icon_done.svg" />
+	  <MauiImage Include="Resources\Images\Light\light_icon_add.svg" />
+	  <MauiImage Include="Resources\Images\Light\light_icon_back.svg" />
+	  <MauiImage Include="Resources\Images\Light\light_icon_close.svg" />
+	  <MauiImage Include="Resources\Images\Light\light_icon_done.svg" />
+	  <MauiImage Include="Resources\Images\Light\light_icon_help.svg" />
 	</ItemGroup>
 
 </Project>

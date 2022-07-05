@@ -5,7 +5,7 @@ namespace SpicyWorkoutPlaner.Core.Models
     public interface IDataBaseCore
     {
         [PrimaryKey]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         public DateTimeOffset? CreatedAt { get; set; }
 

@@ -10,15 +10,15 @@ namespace SpicyWorkoutPlaner.Planer.Models
         public string Description { get; set; }
 
         [Indexed]
-        public long WorkoutId { get; set; }
+        public string WorkoutId { get; set; }
 
         [Indexed]
-        public long ImageId { get; set; }
+        public string ImageId { get; set; }
 
         // Interface impl.
 
         [PrimaryKey]
-        public long Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [Required]
         public DateTimeOffset? CreatedAt { get; set; }

@@ -13,7 +13,7 @@ namespace SpicyWorkoutPlaner.Planer.Models
         // Interface impl.
 
         [PrimaryKey]
-        public long Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [Required]
         public DateTimeOffset? CreatedAt { get; set; }

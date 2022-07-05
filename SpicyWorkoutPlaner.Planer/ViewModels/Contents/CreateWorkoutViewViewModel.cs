@@ -16,6 +16,11 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels.Contents
 
         public event EventHandler ItemCreated;
 
+        /// <summary>
+        /// Constructor with dependency injection
+        /// </summary>
+        /// <param name="navigationService"><see cref="INavigationService"/></param>
+        /// <param name="workoutRepository"><see cref="WorkoutRepository"/></param>
         public CreateWorkoutViewViewModel(
             INavigationService navigationService,
             WorkoutRepository workoutRepository)
