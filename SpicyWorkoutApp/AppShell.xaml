@@ -5,14 +5,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SpicyWorkoutApp"
     xmlns:views="clr-namespace:SpicyWorkoutPlaner.Planer.Views;assembly=SpicyWorkoutPlaner.Planer"
+    xmlns:workoutviews="clr-namespace:SpicyWorkoutPlaner.Planer.Views.Workout;assembly=SpicyWorkoutPlaner.Planer"
     Shell.FlyoutBehavior="Flyout">
 
     <FlyoutItem Route="mainpage">
-        <ShellContent ContentTemplate="{DataTemplate views:CreateWorkoutPage}" Route="create-workouts" />
+        <ShellContent
+            Title="WorkoutCreate"
+            ContentTemplate="{DataTemplate views:CreateWorkoutPage}"
+            Route="create-workouts" />
     </FlyoutItem>
 
     <FlyoutItem Route="mainpage">
-        <ShellContent ContentTemplate="{DataTemplate views:DisclaimerPage}" Route="disclaimer" />
+        <ShellContent
+            Title="Workoutdetail"
+            ContentTemplate="{DataTemplate workoutviews:WorkoutDetailPage}"
+            Route="workout-detail" />
+    </FlyoutItem>
+
+    <FlyoutItem Route="mainpage">
+        <ShellContent
+            Title="Disclaimer"
+            ContentTemplate="{DataTemplate views:DisclaimerPage}"
+            Route="disclaimer" />
     </FlyoutItem>
 
 </Shell>

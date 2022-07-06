@@ -23,5 +23,8 @@
     <MauiXaml Update="Views\DisclaimerPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\Workout\WorkoutDetailPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>
