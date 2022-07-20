@@ -6,7 +6,9 @@ using SpicyWorkoutPlaner.Planer;
 using SpicyWorkoutPlaner.Planer.Repositories;
 using SpicyWorkoutPlaner.Planer.ViewModels;
 using SpicyWorkoutPlaner.Planer.ViewModels.Contents;
+using SpicyWorkoutPlaner.Planer.ViewModels.Workouts;
 using SpicyWorkoutPlaner.Planer.Views;
+using SpicyWorkoutPlaner.Planer.Views.Workouts;
 
 namespace SpicyWorkoutApp;
 
@@ -37,8 +39,11 @@ public static class MauiProgram
 		// Add ViewModels to Services
 		builder.Services.AddTransient<CreateWorkoutPageViewModel>();
 		builder.Services.AddTransient<CreateWorkoutViewViewModel>();
+		builder.Services.AddTransient<WorkoutDetailPageViewModel>();
 
 		SetHandler();
+
+		RegisterRouting();
 
 		return builder.Build();
 	}
@@ -56,5 +61,10 @@ public static class MauiProgram
 			h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
 		});
 #endif
+	}
+
+	private static void RegisterRouting()
+	{
+		Routing.RegisterRoute("workoutdetail", typeof(WorkoutDetailPage));
 	}
 }

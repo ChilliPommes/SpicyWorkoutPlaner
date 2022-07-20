@@ -57,9 +57,14 @@ namespace SpicyWorkoutPlaner.Planer.ViewModels
             }
         });
 
-        public ICommand ItemSelectionChanged => new Command(() =>
+        public ICommand ItemSelectionChanged => new Command(async () =>
         {
-            // TODO fill with life
+            var navigationParameter = new Dictionary<string, object>
+            {
+                { "WorkoutListItemViewModel", SelectedItem }
+            };
+
+            await Shell.Current.GoToAsync($"workoutdetail", navigationParameter);
         });
 
         private void LoadWorkOuts()
