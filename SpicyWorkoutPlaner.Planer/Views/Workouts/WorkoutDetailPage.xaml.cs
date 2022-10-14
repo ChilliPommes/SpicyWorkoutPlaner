@@ -8,12 +8,7 @@ public partial class WorkoutDetailPage : ContentPage
 {
 	private WorkoutListItemViewModel workoutListItemViewModel;
 
-	public WorkoutDetailPage()
-	{
-        InitializeComponent();
-    }
-
-    public WorkoutDetailPage(WorkoutDetailPageViewModel workoutDetailPageViewModel)
+	public WorkoutDetailPage(WorkoutDetailPageViewModel workoutDetailPageViewModel)
 	{
 		InitializeComponent();
 

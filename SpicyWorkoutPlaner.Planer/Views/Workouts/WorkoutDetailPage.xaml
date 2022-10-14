@@ -86,7 +86,7 @@
                         FontSize="Medium"
                         HorizontalOptions="EndAndExpand"
                         HorizontalTextAlignment="Start"
-                        Text="25"
+                        Text="{Binding ExerciseCount}"
                         VerticalOptions="Center"
                         VerticalTextAlignment="Center" />
                 </Grid>

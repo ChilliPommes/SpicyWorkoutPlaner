@@ -27,6 +27,9 @@
 	  <Compile Update="Controls\BottomSheetPage.xaml.cs">
 	    <DependentUpon>BottomSheetPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\Contents\CreateWorkoutExerciseView.xaml.cs">
+	    <DependentUpon>CreateWorkoutExerciseView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -37,6 +40,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Controls\Stepper.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Contents\CreateWorkoutExerciseView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Contents\CreateWorkoutView.xaml">

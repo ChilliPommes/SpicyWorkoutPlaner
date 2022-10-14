@@ -45,6 +45,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Modules\**" />
+	  <Compile Remove="Modules\**" />
+	  <EmbeddedResource Remove="Modules\**" />
+	  <MauiCss Remove="Modules\**" />
+	  <MauiXaml Remove="Modules\**" />
+	  <None Remove="Modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\Dark\dark_icon_add.svg" />
 	  <None Remove="Resources\Images\Dark\dark_icon_close.svg" />
 	  <None Remove="Resources\Images\Dark\dark_icon_done.svg" />
@@ -57,10 +66,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\SpicyWorkoutPlaner.Planer\SpicyWorkoutPlaner.Planer.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Modules\" />
 	</ItemGroup>
 
 	<ItemGroup>

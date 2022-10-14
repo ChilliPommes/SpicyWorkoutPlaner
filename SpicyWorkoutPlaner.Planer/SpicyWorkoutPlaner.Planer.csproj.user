@@ -11,6 +11,9 @@
     <MauiXaml Update="Controls\Stepper.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\Contents\CreateWorkoutExerciseView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\Contents\CreateWorkoutView.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

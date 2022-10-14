@@ -1,6 +1,4 @@
-﻿using Android.Content.Res;
-using Microsoft.Maui.Platform;
-using SpicyWorkoutApp.Services;
+﻿using SpicyWorkoutApp.Services;
 using SpicyWorkoutPlaner.Core.Interfaces;
 using SpicyWorkoutPlaner.Planer;
 using SpicyWorkoutPlaner.Planer.Repositories;
@@ -8,6 +6,7 @@ using SpicyWorkoutPlaner.Planer.ViewModels;
 using SpicyWorkoutPlaner.Planer.ViewModels.Contents;
 using SpicyWorkoutPlaner.Planer.ViewModels.Workouts;
 using SpicyWorkoutPlaner.Planer.Views;
+using SpicyWorkoutPlaner.Planer.Views.Contents;
 using SpicyWorkoutPlaner.Planer.Views.Workouts;
 
 namespace SpicyWorkoutApp;
@@ -33,6 +32,8 @@ public static class MauiProgram
 		// Add Views to Services
 		builder.Services.AddTransient<CreateWorkoutPage>();
 		builder.Services.AddTransient<CreateWorkoutView>();
+		builder.Services.AddTransient<WorkoutDetailPage>();
+		builder.Services.AddTransient<CreateWorkoutExerciseView>();
 
 		builder.Services.AddTransient<DisclaimerPage>();
 
@@ -40,6 +41,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<CreateWorkoutPageViewModel>();
 		builder.Services.AddTransient<CreateWorkoutViewViewModel>();
 		builder.Services.AddTransient<WorkoutDetailPageViewModel>();
+		builder.Services.AddTransient<CreateWorkoutExerciseViewViewModel>();
 
 		SetHandler();
 
@@ -50,17 +52,15 @@ public static class MauiProgram
 
 	public static void SetHandler()
     {
-#if ANDROID
-		Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("EntryUnderline", (h, v) =>
-		{
-			h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
-		});
+		//Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("EntryUnderline", (h, v) =>
+		//{
+		//	h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
+		//});
 
-		Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("EditorUnderline", (h, v) =>
-		{
-			h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
-		});
-#endif
+		//Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping("EditorUnderline", (h, v) =>
+		//{
+		//	h.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Colors.Black.ToPlatform());
+		//});
 	}
 
 	private static void RegisterRouting()
