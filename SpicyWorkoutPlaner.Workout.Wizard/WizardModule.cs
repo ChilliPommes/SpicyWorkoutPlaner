@@ -1,4 +1,7 @@
-﻿using SpicyWorkoutPlaner.Workout.Wizard.Views;
+﻿using Microsoft.Extensions.DependencyInjection;
+using SpicyWorkoutPlaner.Workout.Wizard.Services;
+using SpicyWorkoutPlaner.Workout.Wizard.ViewModels;
+using SpicyWorkoutPlaner.Workout.Wizard.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +19,16 @@ namespace SpicyWorkoutPlaner.Workout.Wizard
         /// Initialise workout wizard module and registers all necessary service, views and viewmodels
         /// </summary>
         /// <param name="serviceCollection"><see cref="IServiceCollection"/></param>
-        public static void InitializeWizrdModule(this IServiceCollection serviceCollection)
+        public static void InitializeWizardModule(this IServiceCollection serviceCollection)
         {
             // Register servies here
+            serviceCollection.AddSingleton<WorkoutWizardService>();
 
             // Register view here
             serviceCollection.AddTransient<CreateWorkoutPage>();
 
             // Register viewmodels here
+            serviceCollection.AddTransient<CreateWorkoutPageViewModel>();
         }
     }
 }

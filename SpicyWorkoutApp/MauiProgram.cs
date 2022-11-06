@@ -1,7 +1,7 @@
 ﻿using SpicyWorkoutApp.Services;
 using SpicyWorkoutPlaner.Core.Interfaces;
+using SpicyWorkoutPlaner.Database;
 using SpicyWorkoutPlaner.Planer;
-using SpicyWorkoutPlaner.Planer.Repositories;
 using SpicyWorkoutPlaner.Planer.ViewModels;
 using SpicyWorkoutPlaner.Planer.ViewModels.Contents;
 using SpicyWorkoutPlaner.Planer.ViewModels.Workouts;
@@ -26,25 +26,14 @@ public static class MauiProgram
 			}); 
 
         // Add Services to Services
-        builder.Services.AddTransient<WorkoutRepository>();
-        builder.Services.AddTransient<WorkoutExerciseRepository>();
         builder.Services.AddSingleton<INavigationService, NavigationService>();
 
 		// Add Views to Services
-		builder.Services.AddTransient<CreateWorkoutPage>();
-		builder.Services.AddTransient<CreateWorkoutView>();
-		builder.Services.AddTransient<WorkoutDetailPage>();
-		builder.Services.AddTransient<CreateWorkoutExerciseView>();
-
-		builder.Services.AddTransient<DisclaimerPage>();
 
 		// Add ViewModels to Services
-		builder.Services.AddTransient<CreateWorkoutPageViewModel>();
-		builder.Services.AddTransient<CreateWorkoutViewViewModel>();
-		builder.Services.AddTransient<WorkoutDetailPageViewModel>();
-		builder.Services.AddTransient<CreateWorkoutExerciseViewViewModel>();
 
-		builder.Services.InitializeWizrdModule();
+		builder.Services.InitializeWizardModule();
+		builder.Services.InitializeDatabaseModule();
 
 		SetHandler();
 
@@ -68,6 +57,5 @@ public static class MauiProgram
 
 	private static void RegisterRouting()
 	{
-		Routing.RegisterRoute("workoutdetail", typeof(WorkoutDetailPage));
 	}
 }

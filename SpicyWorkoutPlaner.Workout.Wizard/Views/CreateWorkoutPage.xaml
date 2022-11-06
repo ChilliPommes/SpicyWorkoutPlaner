@@ -3,18 +3,22 @@
     x:Class="SpicyWorkoutPlaner.Workout.Wizard.Views.CreateWorkoutPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:components="clr-namespace:SpicyWorkoutPlaner.Components.UI;assembly=SpicyWorkoutPlaner.Components.UI"
+    xmlns:local="clr-namespace:SpicyWorkoutPlaner.Workout.Wizard.Resx"
     Title="CreateWorkoutPage">
-    <VerticalStackLayout>
-        <components:ProgressStepper
-            BackgroundColor="Red"
-            HeightRequest="50"
-            HorizontalOptions="FillAndExpand"
-            StepperCount="3" />
+    <VerticalStackLayout Padding="30,15,30,0">
 
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
+        <Label HorizontalOptions="CenterAndExpand" Text="{x:Static local:WorkoutWizardResources.WizardIntro}" />
+
+        <VerticalStackLayout Padding="0,50,0,0">
+            <Label
+                Padding="10,0,0,0"
+                HorizontalOptions="Start"
+                HorizontalTextAlignment="Start"
+                Text="{x:Static local:WorkoutWizardResources.WorkoutNameLabel}"
+                VerticalTextAlignment="Center" />
+
+            <Entry Placeholder="{x:Static local:WorkoutWizardResources.WorkoutNamePlaceholderText}" Text="{Binding WorkoutName}" />
+        </VerticalStackLayout>
+
     </VerticalStackLayout>
 </ContentPage>

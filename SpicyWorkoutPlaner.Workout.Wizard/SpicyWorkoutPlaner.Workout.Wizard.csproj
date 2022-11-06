@@ -18,12 +18,25 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="Services\" />
-	  <Folder Include="ViewModels\" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Components.UI\SpicyWorkoutPlaner.Components.UI.csproj" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Core.Models\SpicyWorkoutPlaner.Core.Models.csproj" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Core\SpicyWorkoutPlaner.Core.csproj" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Database\SpicyWorkoutPlaner.Database.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SpicyWorkoutPlaner.Components.UI\SpicyWorkoutPlaner.Components.UI.csproj" />
+	  <Compile Update="Resx\WorkoutWizardResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>WorkoutWizardResources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resx\WorkoutWizardResources.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>WorkoutWizardResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>

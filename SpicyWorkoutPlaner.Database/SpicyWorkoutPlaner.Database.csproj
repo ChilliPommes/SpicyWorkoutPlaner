@@ -18,7 +18,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="GranularComponents\" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Core.Models\SpicyWorkoutPlaner.Core.Models.csproj" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Core\SpicyWorkoutPlaner.Core.csproj" />
 	</ItemGroup>
 
 </Project>

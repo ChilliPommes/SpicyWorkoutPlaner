@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutPlaner.Planer",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutPlaner.Core", "SpicyWorkoutPlaner.Core\SpicyWorkoutPlaner.Core.csproj", "{FEA71AB8-C447-49E5-9F60-105C327E6C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Workout.Wizard", "SpicyWorkoutPlaner.Workout.Wizard\SpicyWorkoutPlaner.Workout.Wizard.csproj", "{8CD5F403-D904-4B4D-951D-0AE7147A1323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutPlaner.Workout.Wizard", "SpicyWorkoutPlaner.Workout.Wizard\SpicyWorkoutPlaner.Workout.Wizard.csproj", "{8CD5F403-D904-4B4D-951D-0AE7147A1323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Components.UI", "SpicyWorkoutPlaner.Components.UI\SpicyWorkoutPlaner.Components.UI.csproj", "{6C681130-3EBE-490A-8475-7F9C0417E2A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutPlaner.Components.UI", "SpicyWorkoutPlaner.Components.UI\SpicyWorkoutPlaner.Components.UI.csproj", "{6C681130-3EBE-490A-8475-7F9C0417E2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Database", "SpicyWorkoutPlaner.Database\SpicyWorkoutPlaner.Database.csproj", "{E8F9A7F0-7E54-4E8D-BC7B-4C4DBCD5705B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Core.Models", "SpicyWorkoutPlaner.Core.Models\SpicyWorkoutPlaner.Core.Models.csproj", "{01EBF0BE-7001-44FE-B705-0A48EF4C7BB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,14 @@ Global
 		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F9A7F0-7E54-4E8D-BC7B-4C4DBCD5705B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F9A7F0-7E54-4E8D-BC7B-4C4DBCD5705B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F9A7F0-7E54-4E8D-BC7B-4C4DBCD5705B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F9A7F0-7E54-4E8D-BC7B-4C4DBCD5705B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01EBF0BE-7001-44FE-B705-0A48EF4C7BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01EBF0BE-7001-44FE-B705-0A48EF4C7BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01EBF0BE-7001-44FE-B705-0A48EF4C7BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01EBF0BE-7001-44FE-B705-0A48EF4C7BB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
