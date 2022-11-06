@@ -1,6 +1,6 @@
 ﻿using Realms;
+using SpicyWorkoutPlaner.Core.Models;
 using SpicyWorkoutPlaner.Core.Services;
-using SpicyWorkoutPlaner.Planer.Models;
 
 namespace SpicyWorkoutPlaner.Database
 {

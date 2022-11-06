@@ -15,16 +15,21 @@ namespace SpicyWorkoutPlaner.Workout.Wizard.ViewModels
             WorkoutWizardService workoutWizardService) 
         {
             this.workoutWizardService = workoutWizardService;
+
+            workoutWizardService.StartWizard();
         }
 
         public string WorkoutName
         {
-            get => workoutWizardService.Workout.Name;
+            get => workoutWizardService.Workout?.Name ?? "";
 
             set
             {
-                workoutWizardService.Workout.Name = value;
-                NotifyPropertyChanged();
+                if (workoutWizardService.Workout != null)
+                {
+                    workoutWizardService.Workout.Name = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
     }
