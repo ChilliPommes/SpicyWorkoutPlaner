@@ -8,6 +8,7 @@ using SpicyWorkoutPlaner.Planer.ViewModels.Workouts;
 using SpicyWorkoutPlaner.Planer.Views;
 using SpicyWorkoutPlaner.Planer.Views.Contents;
 using SpicyWorkoutPlaner.Planer.Views.Workouts;
+using SpicyWorkoutPlaner.Workout.Wizard;
 
 namespace SpicyWorkoutApp;
 
@@ -42,6 +43,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<CreateWorkoutViewViewModel>();
 		builder.Services.AddTransient<WorkoutDetailPageViewModel>();
 		builder.Services.AddTransient<CreateWorkoutExerciseViewViewModel>();
+
+		builder.Services.InitializeWizrdModule();
 
 		SetHandler();
 

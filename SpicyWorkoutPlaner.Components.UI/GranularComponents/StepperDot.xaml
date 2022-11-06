@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BoxView
+    x:Class="SpicyWorkoutPlaner.Components.UI.GranularComponents.StepperDot"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Background="Transparent"
+    BackgroundColor="Black"
+    CornerRadius="2"
+    HeightRequest="10"
+    WidthRequest="10" />

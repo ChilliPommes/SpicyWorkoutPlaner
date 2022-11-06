@@ -5,9 +5,13 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutApp", "SpicyWorkoutApp\SpicyWorkoutApp.csproj", "{0D812096-FE75-47DE-9342-A477C26DD110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Planer", "SpicyWorkoutPlaner.Planer\SpicyWorkoutPlaner.Planer.csproj", "{C40AC8B0-3F9D-45A6-B116-14F7253FDD7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutPlaner.Planer", "SpicyWorkoutPlaner.Planer\SpicyWorkoutPlaner.Planer.csproj", "{C40AC8B0-3F9D-45A6-B116-14F7253FDD7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Core", "SpicyWorkoutPlaner.Core\SpicyWorkoutPlaner.Core.csproj", "{FEA71AB8-C447-49E5-9F60-105C327E6C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpicyWorkoutPlaner.Core", "SpicyWorkoutPlaner.Core\SpicyWorkoutPlaner.Core.csproj", "{FEA71AB8-C447-49E5-9F60-105C327E6C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Workout.Wizard", "SpicyWorkoutPlaner.Workout.Wizard\SpicyWorkoutPlaner.Workout.Wizard.csproj", "{8CD5F403-D904-4B4D-951D-0AE7147A1323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpicyWorkoutPlaner.Components.UI", "SpicyWorkoutPlaner.Components.UI\SpicyWorkoutPlaner.Components.UI.csproj", "{6C681130-3EBE-490A-8475-7F9C0417E2A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,14 @@ Global
 		{FEA71AB8-C447-49E5-9F60-105C327E6C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA71AB8-C447-49E5-9F60-105C327E6C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA71AB8-C447-49E5-9F60-105C327E6C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD5F403-D904-4B4D-951D-0AE7147A1323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD5F403-D904-4B4D-951D-0AE7147A1323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD5F403-D904-4B4D-951D-0AE7147A1323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD5F403-D904-4B4D-951D-0AE7147A1323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C681130-3EBE-490A-8475-7F9C0417E2A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

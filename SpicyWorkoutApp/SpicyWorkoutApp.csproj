@@ -66,6 +66,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\SpicyWorkoutPlaner.Planer\SpicyWorkoutPlaner.Planer.csproj" />
+	  <ProjectReference Include="..\SpicyWorkoutPlaner.Workout.Wizard\SpicyWorkoutPlaner.Workout.Wizard.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
