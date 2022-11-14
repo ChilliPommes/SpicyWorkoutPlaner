@@ -57,11 +57,13 @@
 	  <None Remove="Resources\Images\Dark\dark_icon_add.svg" />
 	  <None Remove="Resources\Images\Dark\dark_icon_close.svg" />
 	  <None Remove="Resources\Images\Dark\dark_icon_done.svg" />
+	  <None Remove="Resources\Images\Dark\dark_icon_info.svg" />
 	  <None Remove="Resources\Images\Light\light_icon_add.svg" />
 	  <None Remove="Resources\Images\Light\light_icon_back.svg" />
 	  <None Remove="Resources\Images\Light\light_icon_close.svg" />
 	  <None Remove="Resources\Images\Light\light_icon_done.svg" />
 	  <None Remove="Resources\Images\Light\light_icon_help.svg" />
+	  <None Remove="Resources\Images\Light\light_icon_info.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -73,11 +75,13 @@
 	  <MauiImage Include="Resources\Images\Dark\dark_icon_add.svg" />
 	  <MauiImage Include="Resources\Images\Dark\dark_icon_close.svg" />
 	  <MauiImage Include="Resources\Images\Dark\dark_icon_done.svg" />
+	  <MauiImage Include="Resources\Images\Dark\dark_icon_info.svg" />
 	  <MauiImage Include="Resources\Images\Light\light_icon_add.svg" />
 	  <MauiImage Include="Resources\Images\Light\light_icon_back.svg" />
 	  <MauiImage Include="Resources\Images\Light\light_icon_close.svg" />
 	  <MauiImage Include="Resources\Images\Light\light_icon_done.svg" />
 	  <MauiImage Include="Resources\Images\Light\light_icon_help.svg" />
+	  <MauiImage Include="Resources\Images\Light\light_icon_info.svg" />
 	</ItemGroup>
 
 </Project>

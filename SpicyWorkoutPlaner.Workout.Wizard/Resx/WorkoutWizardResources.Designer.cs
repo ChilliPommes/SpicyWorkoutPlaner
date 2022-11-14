@@ -61,6 +61,33 @@ namespace SpicyWorkoutPlaner.Workout.Wizard.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Workout anlegen ähnelt.
+        /// </summary>
+        public static string CreateWorkout {
+            get {
+                return ResourceManager.GetString("CreateWorkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Flex-Workout ähnelt.
+        /// </summary>
+        public static string FlexWorkout {
+            get {
+                return ResourceManager.GetString("FlexWorkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Static-Workout ähnelt.
+        /// </summary>
+        public static string StaticWorkout {
+            get {
+                return ResourceManager.GetString("StaticWorkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Herzlich wilkommen in Ihrem persönlich Wizard zum erstellen des perfekten Workouts. Folgen Sie den kommenden Schritte und erstellen Sie Ihr persönliches Workout! ähnelt.
         /// </summary>
         public static string WizardIntro {

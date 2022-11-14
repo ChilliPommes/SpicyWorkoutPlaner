@@ -10,7 +10,7 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 
-        WindowHandler.Mapper.ModifyMapping(nameof(IWindow.Content), OnWorkaround);
+        //WindowHandler.Mapper.ModifyMapping(nameof(IWindow.Content), OnWorkaround);
     }
 
     private void OnWorkaround(IWindowHandler arg1, IWindow arg2, Action<IElementHandler, IElement> arg3)
