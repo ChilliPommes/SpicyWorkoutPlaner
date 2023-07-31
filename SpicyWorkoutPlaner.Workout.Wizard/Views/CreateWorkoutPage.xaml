@@ -12,29 +12,35 @@
             HorizontalOptions="CenterAndExpand"
             Text="{x:Static local:WorkoutWizardResources.WizardIntro}" />
 
-        <VerticalStackLayout Margin="0,50,0,0">
-            <Label
-                Margin="5,0,0,0"
-                FontSize="Medium"
-                HorizontalOptions="Start"
-                HorizontalTextAlignment="Start"
-                Text="{x:Static local:WorkoutWizardResources.WorkoutNameLabel}"
-                VerticalTextAlignment="Center" />
+        <Label
+            Margin="5,60,0,0"
+            FontSize="Medium"
+            HorizontalOptions="Start"
+            HorizontalTextAlignment="Start"
+            Text="{x:Static local:WorkoutWizardResources.WorkoutNameLabel}"
+            VerticalTextAlignment="Center" />
 
-            <Entry
-                FontSize="Medium"
-                Placeholder="{x:Static local:WorkoutWizardResources.WorkoutNamePlaceholderText}"
-                Text="{Binding WorkoutName}" />
-        </VerticalStackLayout>
+        <Entry
+            FontSize="Medium"
+            Placeholder="{x:Static local:WorkoutWizardResources.WorkoutNamePlaceholderText}"
+            ReturnType="Done"
+            Text="{Binding WorkoutName}" />
 
         <VerticalStackLayout Margin="0,40,0,0" Spacing="40">
 
-            <StackLayout Orientation="Horizontal">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
                 <CheckBox
                     x:Name="StaticCheckbox"
+                    Grid.Column="0"
                     CheckedChanged="CheckBox_CheckedChanged"
                     IsChecked="{Binding StaticCheck}" />
                 <Label
+                    Grid.Column="1"
                     Margin="10,0,0,0"
                     FontSize="Medium"
                     HorizontalOptions="StartAndExpand"
@@ -42,19 +48,27 @@
                     Text="{x:Static local:WorkoutWizardResources.StaticWorkout}"
                     VerticalTextAlignment="Center" />
                 <Image
+                    Grid.Column="2"
                     Margin="0,0,5,0"
                     HeightRequest="25"
                     HorizontalOptions="End"
                     Source="{AppThemeBinding Light=light_icon_info.png,
                                              Dark=dark_icon_info.png}" />
-            </StackLayout>
+            </Grid>
 
-            <StackLayout Orientation="Horizontal">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
                 <CheckBox
                     x:Name="FlexCheckbox"
+                    Grid.Column="0"
                     CheckedChanged="CheckBox_CheckedChanged"
                     IsChecked="{Binding FlexCheck}" />
                 <Label
+                    Grid.Column="1"
                     Margin="10,0,0,0"
                     FontSize="Medium"
                     HorizontalOptions="StartAndExpand"
@@ -62,12 +76,13 @@
                     Text="{x:Static local:WorkoutWizardResources.FlexWorkout}"
                     VerticalTextAlignment="Center" />
                 <Image
+                    Grid.Column="2"
                     Margin="0,0,5,0"
                     HeightRequest="25"
                     HorizontalOptions="End"
                     Source="{AppThemeBinding Light=light_icon_info.png,
                                              Dark=dark_icon_info.png}" />
-            </StackLayout>
+            </Grid>
 
         </VerticalStackLayout>
 
