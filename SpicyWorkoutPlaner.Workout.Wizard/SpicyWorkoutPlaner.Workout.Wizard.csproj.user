@@ -5,5 +5,8 @@
     <MauiXaml Update="Views\CreateWorkoutPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\ExerciseManagePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>

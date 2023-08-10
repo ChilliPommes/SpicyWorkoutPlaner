@@ -1,4 +1,5 @@
-﻿using SpicyWorkoutPlaner.Core.ViewModels;
+﻿using SpicyWorkoutPlaner.Core.Interfaces;
+using SpicyWorkoutPlaner.Core.ViewModels;
 using SpicyWorkoutPlaner.Workout.Wizard.Services;
 using SpicyWorkoutPlaner.Workout.Wizard.Views;
 using System.Windows.Input;
@@ -10,13 +11,14 @@ namespace SpicyWorkoutPlaner.Workout.Wizard.ViewModels
     /// </summary>
     public class CreateWorkoutPageViewModel : BaseViewModel
     {
-        private readonly WorkoutWizardService workoutWizardService;
+        private readonly IWorkoutWizardService workoutWizardService;
 
         private bool _staticCheck;
         private bool _flexCheck;
 
         public CreateWorkoutPageViewModel(
-            WorkoutWizardService workoutWizardService)
+            INavigationService navigationService,
+            IWorkoutWizardService workoutWizardService) : base(navigationService)
         {
             this.workoutWizardService = workoutWizardService;
 
@@ -68,7 +70,7 @@ namespace SpicyWorkoutPlaner.Workout.Wizard.ViewModels
             workoutWizardService.Workout.IsFlex = FlexCheck;
             workoutWizardService.Workout.IsStatic = StaticCheck;
 
-            // TODO Navigatio to next step
+            NavigationService.NavigateTo("workout/creation/manage-exercises");
         });
     }
 }

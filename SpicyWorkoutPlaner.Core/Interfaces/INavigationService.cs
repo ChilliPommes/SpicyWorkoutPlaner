@@ -1,9 +1,13 @@
-﻿namespace SpicyWorkoutPlaner.Core.Interfaces
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SpicyWorkoutPlaner.Core.Interfaces
 {
     public interface INavigationService
     {
-        Task NavigateTo<T>(T page, bool isPopUp);
-
-        Task NavigateBack(bool isPopup = false);
+        Task NavigateTo(string route);
     }
 }

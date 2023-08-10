@@ -1,5 +1,7 @@
-﻿using SpicyWorkoutApp.Services;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
+using SpicyWorkoutApp.Services;
 using SpicyWorkoutPlaner.Core.Interfaces;
+using SpicyWorkoutPlaner.Core.Static;
 using SpicyWorkoutPlaner.Database;
 using SpicyWorkoutPlaner.Workout.Wizard;
 
@@ -16,14 +18,13 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			}); 
-
-        // Add Services to Services
-        builder.Services.AddSingleton<INavigationService, NavigationService>();
+			});
 
 		// Add Views to Services
 
 		// Add ViewModels to Services
+
+		builder.Services.AddSingleton<INavigationService, NavigationService>();
 
 		builder.Services.InitializeWizardModule();
 		builder.Services.InitializeDatabaseModule();
@@ -31,6 +32,8 @@ public static class MauiProgram
 		SetHandler();
 
 		RegisterRouting();
+
+		GlobalServiceProvider.Instance = builder.Services.BuildServiceProvider();
 
 		return builder.Build();
 	}

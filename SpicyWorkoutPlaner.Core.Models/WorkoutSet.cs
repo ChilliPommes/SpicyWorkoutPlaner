@@ -1,8 +1,9 @@
-﻿using Realms;
+﻿using MongoDB.Bson;
+using Realms;
 
 namespace SpicyWorkoutPlaner.Core.Models
 {
-    public sealed class WorkoutSet : RealmObject, IDataBaseCore
+    public partial class WorkoutSet : IRealmObject, IDataBaseCore
     {
         [Indexed]
         public string WorkoutExerciseId { get; set; }
@@ -10,10 +11,9 @@ namespace SpicyWorkoutPlaner.Core.Models
         // Interface impl.
 
         [PrimaryKey]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public ObjectId Id { get; set; }
 
-        [Required]
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
         public DateTimeOffset? UpdatedAt { get; set; }
 

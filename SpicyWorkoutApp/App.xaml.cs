@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Handlers;
+using SpicyWorkoutPlaner.Core.Static;
 
 namespace SpicyWorkoutApp;
 
@@ -9,8 +10,6 @@ public partial class App : Application
 		InitializeComponent();
 
 		MainPage = new AppShell();
-
-        //WindowHandler.Mapper.ModifyMapping(nameof(IWindow.Content), OnWorkaround);
     }
 
     private void OnWorkaround(IWindowHandler arg1, IWindow arg2, Action<IElementHandler, IElement> arg3)

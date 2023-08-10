@@ -1,14 +1,18 @@
+using SpicyWorkoutPlaner.Core.Services;
+using SpicyWorkoutPlaner.Core.Static;
 using SpicyWorkoutPlaner.Workout.Wizard.ViewModels;
 
 namespace SpicyWorkoutPlaner.Workout.Wizard.Views;
 
 public partial class CreateWorkoutPage : ContentPage
 {
-    public CreateWorkoutPage(CreateWorkoutPageViewModel createWorkoutPageViewModel)
+    public CreateWorkoutPage()
     {
         InitializeComponent();
 
-        BindingContext = createWorkoutPageViewModel;
+        var test = GlobalServiceProvider.Instance.GetService(typeof(CreateWorkoutPageViewModel));
+
+        BindingContext = test;
     }
 
     private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)

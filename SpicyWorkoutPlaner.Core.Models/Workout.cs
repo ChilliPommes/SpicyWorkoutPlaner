@@ -3,24 +3,20 @@ using Realms;
 
 namespace SpicyWorkoutPlaner.Core.Models
 {
-    public sealed class Workout : RealmObject, IDataBaseCore
+    public partial class Workout : IRealmObject, IDataBaseCore
     {
-        [Required]
+        [PrimaryKey]
+        public ObjectId Id { get; set; }
+
         public string Name { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;
-
-        // Interface impl.
-
-        [PrimaryKey]
-        public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
 
         public bool IsFlex { get; set; }
 
         public bool IsStatic { get; set; }
 
-        [Required]
-        public DateTimeOffset? CreatedAt { get; set; } = DateTimeOffset.Now;
+        public DateTimeOffset CreatedAt { get; set; }
 
         public DateTimeOffset? UpdatedAt { get; set; }
 

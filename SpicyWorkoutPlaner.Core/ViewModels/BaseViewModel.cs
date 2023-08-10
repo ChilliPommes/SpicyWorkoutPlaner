@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SpicyWorkoutPlaner.Core.Interfaces;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SpicyWorkoutPlaner.Core.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        protected INavigationService NavigationService { get; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public async Task NavigateTo<T>(T page) where T : class
+        public BaseViewModel(INavigationService navigationService)
         {
-            // TODO impl navigation
+            NavigationService = navigationService;
         }
 
         public void NotifyPropertyChanged([CallerMemberName] string name = "")

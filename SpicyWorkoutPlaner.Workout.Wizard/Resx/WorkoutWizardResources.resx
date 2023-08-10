@@ -127,7 +127,7 @@
     <value>Static-Workout</value>
   </data>
   <data name="WizardIntro" xml:space="preserve">
-    <value>Herzlich wilkommen in Ihrem persönlich Wizard zum erstellen des perfekten Workouts. Folgen Sie den kommenden Schritte und erstellen Sie Ihr persönliches Workout!</value>
+    <value>Herzlich wilkommen in Ihrem persönlich Wizard zum erstellen des perfekten Workouts. Folgen Sie den kommenden Schritten und erstellen Sie Ihr persönliches Workout!</value>
   </data>
   <data name="WorkoutNameLabel" xml:space="preserve">
     <value>Workout Name</value>

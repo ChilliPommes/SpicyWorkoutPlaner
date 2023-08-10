@@ -2,7 +2,7 @@
 
 namespace SpicyWorkoutPlaner.Workout.Wizard.Services
 {
-    public class WorkoutWizardService
+    public class WorkoutWizardService : IWorkoutWizardService
     {
         private readonly WorkoutRepository workoutRepository;
 
@@ -41,7 +41,7 @@ namespace SpicyWorkoutPlaner.Workout.Wizard.Services
         /// <summary>
         /// Nulls the created workout the abort the creation process
         /// </summary>
-        public void AbortWizrd()
+        public void AbortWizard()
         {
             workout = null;
         }

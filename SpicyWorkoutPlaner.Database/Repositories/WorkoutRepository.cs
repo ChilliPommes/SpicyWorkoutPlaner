@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using MongoDB.Bson;
+using Realms;
 using SpicyWorkoutPlaner.Core.Models;
 using SpicyWorkoutPlaner.Core.Services;
 
@@ -16,7 +17,7 @@ namespace SpicyWorkoutPlaner.Database
             return realm.All<Workout>().ToList();
         }
 
-        public Workout? GetOneById(string id)
+        public Workout? GetOneById(ObjectId id)
         {
             using var realm = Realm.GetInstance(configuration);
 

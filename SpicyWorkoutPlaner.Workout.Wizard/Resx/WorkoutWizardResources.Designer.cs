@@ -88,7 +88,7 @@ namespace SpicyWorkoutPlaner.Workout.Wizard.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Herzlich wilkommen in Ihrem persönlich Wizard zum erstellen des perfekten Workouts. Folgen Sie den kommenden Schritte und erstellen Sie Ihr persönliches Workout! ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Herzlich wilkommen in Ihrem persönlich Wizard zum erstellen des perfekten Workouts. Folgen Sie den kommenden Schritten und erstellen Sie Ihr persönliches Workout! ähnelt.
         /// </summary>
         public static string WizardIntro {
             get {

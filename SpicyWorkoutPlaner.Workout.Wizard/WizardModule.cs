@@ -22,10 +22,11 @@ namespace SpicyWorkoutPlaner.Workout.Wizard
         public static void InitializeWizardModule(this IServiceCollection serviceCollection)
         {
             // Register servies here
-            serviceCollection.AddSingleton<WorkoutWizardService>();
+            serviceCollection.AddSingleton<IWorkoutWizardService, WorkoutWizardService>();
 
             // Register view here
-            serviceCollection.AddTransient<CreateWorkoutPage>();
+            Routing.RegisterRoute("workout/creation/create", typeof(CreateWorkoutPage));
+            Routing.RegisterRoute("workout/creation/manage-exercises", typeof(ExerciseManagePage));
 
             // Register viewmodels here
             serviceCollection.AddTransient<CreateWorkoutPageViewModel>();
